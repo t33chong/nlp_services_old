@@ -301,7 +301,7 @@ class BaseDocumentCountsService(RestfulResource):
             return page_doc_response
 
         entities_to_count = {}
-        entity_service = self._entity_count_service
+        entity_service = self._entity_count_service()
 
         counter = 1
         page_doc_ids = page_doc_response.get(wiki_id, [])
