@@ -65,7 +65,7 @@ def bootstrap_sqlite_connection():
 
     db_paths = filter(os.path.exists, candidate_paths)
 
-    if len(db_paths) == 0:
+    if not db_paths:
         raise LookupError("The wp_titles.db file can't be found. "
                           "Please add it to the nlp_services.title_confirmation folder or your home directory.")
     conn = lite.connect(db_paths[-1])
