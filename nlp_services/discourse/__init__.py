@@ -3,6 +3,7 @@ __author__ = 'relwell'
 from .. import RestfulResource
 from ..caching import cached_service_request
 import entities
+import sentiment
 
 
 class AllEntitiesSentimentAndCountsService(RestfulResource):
