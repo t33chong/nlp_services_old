@@ -16,8 +16,8 @@ class AllEntitiesSentimentAndCountsService(RestfulResource):
             entities.WikiEntitiesService().get_value(wiki_id).items()
         )
         sentiments = dict(
-            entities.WikiEntitySentimentService().get_value(wiki_id, {}).items() +
-            entities.WpWikiEntitySentimentService().get_value(wiki_id, {}).items()
+            sentiment.WikiEntitySentimentService().get_value(wiki_id, {}).items() +
+            sentiment.WpWikiEntitySentimentService().get_value(wiki_id, {}).items()
         )
 
         resp_dict = {}
