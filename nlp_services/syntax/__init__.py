@@ -44,6 +44,21 @@ class AllNounPhrasesService(RestfulResource):
         return {doc_id: get_pos_phrases(doc_id, [u'NP']), 'status': 200}
 
 
+class AllNounsService(RestfulResource):
+
+    """ Read-only service that gives all nouns for a document """
+
+    @cached_service_request
+    def get(self, doc_id):
+        """ Get nouns for a document
+        :param doc_id: the id of the document in Solr
+        :type doc_id: str
+        :return: a response in the proper format
+        :rtype: dict
+        """
+        return {doc_id: get_pos_phrases(doc_id, [u'NP', u'NN', u'NNS', u'NNP', u'NNPS']), 'status': 200}
+
+
 class AllVerbPhrasesService(RestfulResource):
 
     """ Read-only service that gives all verb phrases for a document """
